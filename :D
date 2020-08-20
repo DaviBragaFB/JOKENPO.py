@@ -1,0 +1,24 @@
+print('\033[31m-='*10)
+name = 'JOKENPO'
+print('{:^19}'.format(name))
+print('-='*10)
+import random
+import time
+print('\033[m SUAS OPÇÕES:\n[0] PEDRA\n[1] PAPEL\n[2] TESOURA')
+jogador = int(input('Qual você escolhe?  '))
+opt = ('PEDRA', 'PAPEL', 'TESOURA')
+computador = random.randint(0, 2)
+print(f'\033[35mO COMPUTADOR ESCOLHE {opt[computador]}!\033[m')
+time.sleep(1)
+if jogador == computador:
+    print('\033[33mEMPATOU!! Ambos escolheram a mesma opção.\033[m')
+elif jogador == 0 and computador == 1:
+    print('\033[30mVITÓRIA DO COMPUTADOR! PAPEL VENCE DE PEDRA!!\033[m')
+elif jogador == 1 and computador == 2:
+    print('\033[30mVITÓRIA DO COMPUTADOR! TESOURA VENCE DE PAPEL!!\033[m')
+elif jogador == 2 and computador == 0:
+    print('\033[30mVITÓRIA DO COMPUTADOR! PEDRA VENCE DE TESOURA!!\033[m')
+else:
+    print(f'\033[36mVITÓRIA DO JOGADOR! {opt[jogador]} VENCE DE {opt[computador]}!!\033[m')
+time.sleep(1)
+print('\033[32mFIM DE JOGO\033[m')
